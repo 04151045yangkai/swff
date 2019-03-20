@@ -49,5 +49,6 @@ public class Login implements Serializable {
         this.userFlag = userFlag;
     }
     public Login() {
+
     }
 }
