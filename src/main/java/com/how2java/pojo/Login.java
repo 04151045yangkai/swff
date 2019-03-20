@@ -1,6 +1,8 @@
 package com.how2java.pojo;
 
-public class Login {
+import java.io.Serializable;
+
+public class Login implements Serializable {
 
     private int userId;
 
