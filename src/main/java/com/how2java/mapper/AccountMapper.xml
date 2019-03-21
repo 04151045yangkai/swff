@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.how2java.mapper.AccountMapper">
+  <resultMap id="BaseResultMap" type="com.how2java.pojo.Account">
+    <id column="idCard" jdbcType="VARCHAR" property="idcard" />
+    <result column="AuserId" jdbcType="INTEGER" property="auserid" />
+    <result column="politics" jdbcType="CHAR" property="politics" />
+    <result column="nation" jdbcType="CHAR" property="nation" />
+    <result column="majorField" jdbcType="VARCHAR" property="majorfield" />
+    <result column="birthday" jdbcType="DATE" property="birthday" />
+    <result column="archivesInSchool" jdbcType="CHAR" property="archivesinschool" />
+    <result column="rResidenceInSchool" jdbcType="CHAR" property="rresidenceinschool" />
+    <result column="archivesPath" jdbcType="VARCHAR" property="archivespath" />
+    <result column="rResidencePath" jdbcType="VARCHAR" property="rresidencepath" />
+    <result column="qqNum" jdbcType="INTEGER" property="qqnum" />
+    <result column="phoneNum" jdbcType="INTEGER" property="phonenum" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    idCard, AuserId, politics, nation, majorField, birthday, archivesInSchool, rResidenceInSchool, 
+    archivesPath, rResidencePath, qqNum, phoneNum, email
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from account
+    where idCard = #{idcard,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from account
+    where idCard = #{idcard,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.how2java.pojo.Account">
+    insert into account (idCard, AuserId, politics, 
+      nation, majorField, birthday, 
+      archivesInSchool, rResidenceInSchool, archivesPath, 
+      rResidencePath, qqNum, phoneNum, 
+      email)
+    values (#{idcard,jdbcType=VARCHAR}, #{auserid,jdbcType=INTEGER}, #{politics,jdbcType=CHAR}, 
+      #{nation,jdbcType=CHAR}, #{majorfield,jdbcType=VARCHAR}, #{birthday,jdbcType=DATE}, 
+      #{archivesinschool,jdbcType=CHAR}, #{rresidenceinschool,jdbcType=CHAR}, #{archivespath,jdbcType=VARCHAR}, 
+      #{rresidencepath,jdbcType=VARCHAR}, #{qqnum,jdbcType=INTEGER}, #{phonenum,jdbcType=INTEGER}, 
+      #{email,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.how2java.pojo.Account">
+    insert into account
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="idcard != null">
+        idCard,
+      </if>
+      <if test="auserid != null">
+        AuserId,
+      </if>
+      <if test="politics != null">
+        politics,
+      </if>
+      <if test="nation != null">
+        nation,
+      </if>
+      <if test="majorfield != null">
+        majorField,
+      </if>
+      <if test="birthday != null">
+        birthday,
+      </if>
+      <if test="archivesinschool != null">
+        archivesInSchool,
+      </if>
+      <if test="rresidenceinschool != null">
+        rResidenceInSchool,
+      </if>
+      <if test="archivespath != null">
+        archivesPath,
+      </if>
+      <if test="rresidencepath != null">
+        rResidencePath,
+      </if>
+      <if test="qqnum != null">
+        qqNum,
+      </if>
+      <if test="phonenum != null">
+        phoneNum,
+      </if>
+      <if test="email != null">
+        email,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="idcard != null">
+        #{idcard,jdbcType=VARCHAR},
+      </if>
+      <if test="auserid != null">
+        #{auserid,jdbcType=INTEGER},
+      </if>
+      <if test="politics != null">
+        #{politics,jdbcType=CHAR},
+      </if>
+      <if test="nation != null">
+        #{nation,jdbcType=CHAR},
+      </if>
+      <if test="majorfield != null">
+        #{majorfield,jdbcType=VARCHAR},
+      </if>
+      <if test="birthday != null">
+        #{birthday,jdbcType=DATE},
+      </if>
+      <if test="archivesinschool != null">
+        #{archivesinschool,jdbcType=CHAR},
+      </if>
+      <if test="rresidenceinschool != null">
+        #{rresidenceinschool,jdbcType=CHAR},
+      </if>
+      <if test="archivespath != null">
+        #{archivespath,jdbcType=VARCHAR},
+      </if>
+      <if test="rresidencepath != null">
+        #{rresidencepath,jdbcType=VARCHAR},
+      </if>
+      <if test="qqnum != null">
+        #{qqnum,jdbcType=INTEGER},
+      </if>
+      <if test="phonenum != null">
+        #{phonenum,jdbcType=INTEGER},
+      </if>
+      <if test="email != null">
+        #{email,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.how2java.pojo.Account">
+    update account
+    <set>
+      <if test="auserid != null">
+        AuserId = #{auserid,jdbcType=INTEGER},
+      </if>
+      <if test="politics != null">
+        politics = #{politics,jdbcType=CHAR},
+      </if>
+      <if test="nation != null">
+        nation = #{nation,jdbcType=CHAR},
+      </if>
+      <if test="majorfield != null">
+        majorField = #{majorfield,jdbcType=VARCHAR},
+      </if>
+      <if test="birthday != null">
+        birthday = #{birthday,jdbcType=DATE},
+      </if>
+      <if test="archivesinschool != null">
+        archivesInSchool = #{archivesinschool,jdbcType=CHAR},
+      </if>
+      <if test="rresidenceinschool != null">
+        rResidenceInSchool = #{rresidenceinschool,jdbcType=CHAR},
+      </if>
+      <if test="archivespath != null">
+        archivesPath = #{archivespath,jdbcType=VARCHAR},
+      </if>
+      <if test="rresidencepath != null">
+        rResidencePath = #{rresidencepath,jdbcType=VARCHAR},
+      </if>
+      <if test="qqnum != null">
+        qqNum = #{qqnum,jdbcType=INTEGER},
+      </if>
+      <if test="phonenum != null">
+        phoneNum = #{phonenum,jdbcType=INTEGER},
+      </if>
+      <if test="email != null">
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where idCard = #{idcard,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.how2java.pojo.Account">
+    update account
+    set AuserId = #{auserid,jdbcType=INTEGER},
+      politics = #{politics,jdbcType=CHAR},
+      nation = #{nation,jdbcType=CHAR},
+      majorField = #{majorfield,jdbcType=VARCHAR},
+      birthday = #{birthday,jdbcType=DATE},
+      archivesInSchool = #{archivesinschool,jdbcType=CHAR},
+      rResidenceInSchool = #{rresidenceinschool,jdbcType=CHAR},
+      archivesPath = #{archivespath,jdbcType=VARCHAR},
+      rResidencePath = #{rresidencepath,jdbcType=VARCHAR},
+      qqNum = #{qqnum,jdbcType=INTEGER},
+      phoneNum = #{phonenum,jdbcType=INTEGER},
+      email = #{email,jdbcType=VARCHAR}
+    where idCard = #{idcard,jdbcType=VARCHAR}
+  </update>
+</mapper>

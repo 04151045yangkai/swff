@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.how2java.mapper.BirthplaceMapper">
+  <resultMap id="BaseResultMap" type="com.how2java.pojo.Birthplace">
+    <result column="birthId" jdbcType="INTEGER" property="birthid" />
+    <result column="birthPath" jdbcType="VARCHAR" property="birthpath" />
+    <result column="cityOrTownShip" jdbcType="CHAR" property="cityortownship" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="homePhone" jdbcType="INTEGER" property="homephone" />
+    <result column="zipCode" jdbcType="INTEGER" property="zipcode" />
+    <result column="isSubAllowance" jdbcType="CHAR" property="issuballowance" />
+  </resultMap>
+  <insert id="insert" parameterType="com.how2java.pojo.Birthplace">
+    insert into birthplace (birthId, birthPath, cityOrTownShip, 
+      address, homePhone, zipCode, 
+      isSubAllowance)
+    values (#{birthid,jdbcType=INTEGER}, #{birthpath,jdbcType=VARCHAR}, #{cityortownship,jdbcType=CHAR}, 
+      #{address,jdbcType=VARCHAR}, #{homephone,jdbcType=INTEGER}, #{zipcode,jdbcType=INTEGER}, 
+      #{issuballowance,jdbcType=CHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.how2java.pojo.Birthplace">
+    insert into birthplace
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="birthid != null">
+        birthId,
+      </if>
+      <if test="birthpath != null">
+        birthPath,
+      </if>
+      <if test="cityortownship != null">
+        cityOrTownShip,
+      </if>
+      <if test="address != null">
+        address,
+      </if>
+      <if test="homephone != null">
+        homePhone,
+      </if>
+      <if test="zipcode != null">
+        zipCode,
+      </if>
+      <if test="issuballowance != null">
+        isSubAllowance,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="birthid != null">
+        #{birthid,jdbcType=INTEGER},
+      </if>
+      <if test="birthpath != null">
+        #{birthpath,jdbcType=VARCHAR},
+      </if>
+      <if test="cityortownship != null">
+        #{cityortownship,jdbcType=CHAR},
+      </if>
+      <if test="address != null">
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="homephone != null">
+        #{homephone,jdbcType=INTEGER},
+      </if>
+      <if test="zipcode != null">
+        #{zipcode,jdbcType=INTEGER},
+      </if>
+      <if test="issuballowance != null">
+        #{issuballowance,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

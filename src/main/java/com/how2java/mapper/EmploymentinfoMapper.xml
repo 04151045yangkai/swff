@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.how2java.mapper.EmploymentinfoMapper">
+  <resultMap id="BaseResultMap" type="com.how2java.pojo.Employmentinfo">
+    <result column="eiID" jdbcType="INTEGER" property="eiid" />
+    <result column="eiGraduation" jdbcType="VARCHAR" property="eigraduation" />
+    <result column="eiUnitName" jdbcType="VARCHAR" property="eiunitname" />
+    <result column="eiOriganizationCode" jdbcType="VARCHAR" property="eioriganizationcode" />
+    <result column="eiUnitProperties" jdbcType="CHAR" property="eiunitproperties" />
+    <result column="eiUnitPIndustry" jdbcType="CHAR" property="eiunitpindustry" />
+    <result column="eiCompanyAddress" jdbcType="VARCHAR" property="eicompanyaddress" />
+    <result column="eiJobPosition" jdbcType="CHAR" property="eijobposition" />
+    <result column="eiContacts" jdbcType="VARCHAR" property="eicontacts" />
+    <result column="eiContactsPhone" jdbcType="INTEGER" property="eicontactsphone" />
+    <result column="eiContactEmail" jdbcType="VARCHAR" property="eicontactemail" />
+    <result column="eiZipCode" jdbcType="VARCHAR" property="eizipcode" />
+    <result column="eiFileForwardName" jdbcType="VARCHAR" property="eifileforwardname" />
+    <result column="eiFFzipCode" jdbcType="INTEGER" property="eiffzipcode" />
+    <result column="eiTransferHousehold" jdbcType="VARCHAR" property="eitransferhousehold" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.how2java.pojo.Employmentinfo">
+    <result column="eiFileForwardAddress" jdbcType="VARBINARY" property="eifileforwardaddress" />
+  </resultMap>
+  <sql id="Blob_Column_List">
+    eiFileForwardAddress
+  </sql>
+  <insert id="insert" parameterType="com.how2java.pojo.Employmentinfo">
+    insert into employmentinfo (eiID, eiGraduation, eiUnitName, 
+      eiOriganizationCode, eiUnitProperties, eiUnitPIndustry, 
+      eiCompanyAddress, eiJobPosition, eiContacts, 
+      eiContactsPhone, eiContactEmail, eiZipCode, 
+      eiFileForwardName, eiFFzipCode, eiTransferHousehold, 
+      eiFileForwardAddress)
+    values (#{eiid,jdbcType=INTEGER}, #{eigraduation,jdbcType=VARCHAR}, #{eiunitname,jdbcType=VARCHAR}, 
+      #{eioriganizationcode,jdbcType=VARCHAR}, #{eiunitproperties,jdbcType=CHAR}, #{eiunitpindustry,jdbcType=CHAR}, 
+      #{eicompanyaddress,jdbcType=VARCHAR}, #{eijobposition,jdbcType=CHAR}, #{eicontacts,jdbcType=VARCHAR}, 
+      #{eicontactsphone,jdbcType=INTEGER}, #{eicontactemail,jdbcType=VARCHAR}, #{eizipcode,jdbcType=VARCHAR}, 
+      #{eifileforwardname,jdbcType=VARCHAR}, #{eiffzipcode,jdbcType=INTEGER}, #{eitransferhousehold,jdbcType=VARCHAR}, 
+      #{eifileforwardaddress,jdbcType=VARBINARY})
+  </insert>
+  <insert id="insertSelective" parameterType="com.how2java.pojo.Employmentinfo">
+    insert into employmentinfo
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="eiid != null">
+        eiID,
+      </if>
+      <if test="eigraduation != null">
+        eiGraduation,
+      </if>
+      <if test="eiunitname != null">
+        eiUnitName,
+      </if>
+      <if test="eioriganizationcode != null">
+        eiOriganizationCode,
+      </if>
+      <if test="eiunitproperties != null">
+        eiUnitProperties,
+      </if>
+      <if test="eiunitpindustry != null">
+        eiUnitPIndustry,
+      </if>
+      <if test="eicompanyaddress != null">
+        eiCompanyAddress,
+      </if>
+      <if test="eijobposition != null">
+        eiJobPosition,
+      </if>
+      <if test="eicontacts != null">
+        eiContacts,
+      </if>
+      <if test="eicontactsphone != null">
+        eiContactsPhone,
+      </if>
+      <if test="eicontactemail != null">
+        eiContactEmail,
+      </if>
+      <if test="eizipcode != null">
+        eiZipCode,
+      </if>
+      <if test="eifileforwardname != null">
+        eiFileForwardName,
+      </if>
+      <if test="eiffzipcode != null">
+        eiFFzipCode,
+      </if>
+      <if test="eitransferhousehold != null">
+        eiTransferHousehold,
+      </if>
+      <if test="eifileforwardaddress != null">
+        eiFileForwardAddress,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="eiid != null">
+        #{eiid,jdbcType=INTEGER},
+      </if>
+      <if test="eigraduation != null">
+        #{eigraduation,jdbcType=VARCHAR},
+      </if>
+      <if test="eiunitname != null">
+        #{eiunitname,jdbcType=VARCHAR},
+      </if>
+      <if test="eioriganizationcode != null">
+        #{eioriganizationcode,jdbcType=VARCHAR},
+      </if>
+      <if test="eiunitproperties != null">
+        #{eiunitproperties,jdbcType=CHAR},
+      </if>
+      <if test="eiunitpindustry != null">
+        #{eiunitpindustry,jdbcType=CHAR},
+      </if>
+      <if test="eicompanyaddress != null">
+        #{eicompanyaddress,jdbcType=VARCHAR},
+      </if>
+      <if test="eijobposition != null">
+        #{eijobposition,jdbcType=CHAR},
+      </if>
+      <if test="eicontacts != null">
+        #{eicontacts,jdbcType=VARCHAR},
+      </if>
+      <if test="eicontactsphone != null">
+        #{eicontactsphone,jdbcType=INTEGER},
+      </if>
+      <if test="eicontactemail != null">
+        #{eicontactemail,jdbcType=VARCHAR},
+      </if>
+      <if test="eizipcode != null">
+        #{eizipcode,jdbcType=VARCHAR},
+      </if>
+      <if test="eifileforwardname != null">
+        #{eifileforwardname,jdbcType=VARCHAR},
+      </if>
+      <if test="eiffzipcode != null">
+        #{eiffzipcode,jdbcType=INTEGER},
+      </if>
+      <if test="eitransferhousehold != null">
+        #{eitransferhousehold,jdbcType=VARCHAR},
+      </if>
+      <if test="eifileforwardaddress != null">
+        #{eifileforwardaddress,jdbcType=VARBINARY},
+      </if>
+    </trim>
+  </insert>
+</mapper>

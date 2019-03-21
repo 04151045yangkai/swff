@@ -8,7 +8,7 @@ import org.apache.ibatis.annotations.Param;
 
 public interface CategoryMapper {
  
-      
+      //添加用户
     public int add(Category category);  
        
       

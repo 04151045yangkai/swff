@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.how2java.mapper.PoorstudentcardMapper">
+  <resultMap id="BaseResultMap" type="com.how2java.pojo.Poorstudentcard">
+    <result column="poorId" jdbcType="INTEGER" property="poorid" />
+    <result column="poorState" jdbcType="CHAR" property="poorstate" />
+    <result column="pObtainProgress" jdbcType="VARCHAR" property="pobtainprogress" />
+    <result column="pHelpContent" jdbcType="VARCHAR" property="phelpcontent" />
+    <result column="pHelpContacts" jdbcType="VARCHAR" property="phelpcontacts" />
+    <result column="pHelpPhone" jdbcType="INTEGER" property="phelpphone" />
+  </resultMap>
+  <insert id="insert" parameterType="com.how2java.pojo.Poorstudentcard">
+    insert into poorstudentcard (poorId, poorState, pObtainProgress, 
+      pHelpContent, pHelpContacts, pHelpPhone
+      )
+    values (#{poorid,jdbcType=INTEGER}, #{poorstate,jdbcType=CHAR}, #{pobtainprogress,jdbcType=VARCHAR}, 
+      #{phelpcontent,jdbcType=VARCHAR}, #{phelpcontacts,jdbcType=VARCHAR}, #{phelpphone,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.how2java.pojo.Poorstudentcard">
+    insert into poorstudentcard
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="poorid != null">
+        poorId,
+      </if>
+      <if test="poorstate != null">
+        poorState,
+      </if>
+      <if test="pobtainprogress != null">
+        pObtainProgress,
+      </if>
+      <if test="phelpcontent != null">
+        pHelpContent,
+      </if>
+      <if test="phelpcontacts != null">
+        pHelpContacts,
+      </if>
+      <if test="phelpphone != null">
+        pHelpPhone,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="poorid != null">
+        #{poorid,jdbcType=INTEGER},
+      </if>
+      <if test="poorstate != null">
+        #{poorstate,jdbcType=CHAR},
+      </if>
+      <if test="pobtainprogress != null">
+        #{pobtainprogress,jdbcType=VARCHAR},
+      </if>
+      <if test="phelpcontent != null">
+        #{phelpcontent,jdbcType=VARCHAR},
+      </if>
+      <if test="phelpcontacts != null">
+        #{phelpcontacts,jdbcType=VARCHAR},
+      </if>
+      <if test="phelpphone != null">
+        #{phelpphone,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+</mapper>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.how2java.mapper.LoginMapper">
+  <resultMap id="BaseResultMap" type="com.how2java.pojo.Login">
+    <id column="userId" jdbcType="INTEGER" property="userid" />
+    <result column="passWord" jdbcType="VARCHAR" property="password" />
+    <result column="userFlag" jdbcType="INTEGER" property="userflag" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    userId, passWord, userFlag
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from login
+    where userId = #{userid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from login
+    where userId = #{userid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.how2java.pojo.Login">
+    insert into login (userId, passWord, userFlag
+      )
+    values (#{userid,jdbcType=INTEGER}, #{password,jdbcType=VARCHAR}, #{userflag,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.how2java.pojo.Login">
+    insert into login
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userid != null">
+        userId,
+      </if>
+      <if test="password != null">
+        passWord,
+      </if>
+      <if test="userflag != null">
+        userFlag,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userid != null">
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="userflag != null">
+        #{userflag,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.how2java.pojo.Login">
+    update login
+    <set>
+      <if test="password != null">
+        passWord = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="userflag != null">
+        userFlag = #{userflag,jdbcType=INTEGER},
+      </if>
+    </set>
+    where userId = #{userid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.how2java.pojo.Login">
+    update login
+    set passWord = #{password,jdbcType=VARCHAR},
+      userFlag = #{userflag,jdbcType=INTEGER}
+    where userId = #{userid,jdbcType=INTEGER}
+  </update>
+
+  <select id="login" resultType="Login" parameterType="com.how2java.pojo.Login" >
+    select * from Login where userid=#{userid} and password=#{password}
+    </select>
+
+
+</mapper>

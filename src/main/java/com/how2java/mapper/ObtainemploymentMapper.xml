@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.how2java.mapper.ObtainemploymentMapper">
+  <resultMap id="BaseResultMap" type="com.how2java.pojo.Obtainemployment">
+    <result column="oeId" jdbcType="INTEGER" property="oeid" />
+    <result column="oeIntent" jdbcType="CHAR" property="oeintent" />
+    <result column="oeIntentCity" jdbcType="VARCHAR" property="oeintentcity" />
+    <result column="oeIntentSalary" jdbcType="CHAR" property="oeintentsalary" />
+  </resultMap>
+  <insert id="insert" parameterType="com.how2java.pojo.Obtainemployment">
+    insert into obtainemployment (oeId, oeIntent, oeIntentCity, 
+      oeIntentSalary)
+    values (#{oeid,jdbcType=INTEGER}, #{oeintent,jdbcType=CHAR}, #{oeintentcity,jdbcType=VARCHAR}, 
+      #{oeintentsalary,jdbcType=CHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.how2java.pojo.Obtainemployment">
+    insert into obtainemployment
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="oeid != null">
+        oeId,
+      </if>
+      <if test="oeintent != null">
+        oeIntent,
+      </if>
+      <if test="oeintentcity != null">
+        oeIntentCity,
+      </if>
+      <if test="oeintentsalary != null">
+        oeIntentSalary,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="oeid != null">
+        #{oeid,jdbcType=INTEGER},
+      </if>
+      <if test="oeintent != null">
+        #{oeintent,jdbcType=CHAR},
+      </if>
+      <if test="oeintentcity != null">
+        #{oeintentcity,jdbcType=VARCHAR},
+      </if>
+      <if test="oeintentsalary != null">
+        #{oeintentsalary,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

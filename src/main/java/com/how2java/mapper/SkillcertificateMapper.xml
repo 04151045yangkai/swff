@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.how2java.mapper.SkillcertificateMapper">
+  <resultMap id="BaseResultMap" type="com.how2java.pojo.Skillcertificate">
+    <id column="scID" jdbcType="INTEGER" property="scid" />
+    <result column="scName" jdbcType="VARCHAR" property="scname" />
+    <result column="scContent" jdbcType="VARCHAR" property="sccontent" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    scID, scName, scContent
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from skillcertificate
+    where scID = #{scid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from skillcertificate
+    where scID = #{scid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.how2java.pojo.Skillcertificate">
+    insert into skillcertificate (scID, scName, scContent
+      )
+    values (#{scid,jdbcType=INTEGER}, #{scname,jdbcType=VARCHAR}, #{sccontent,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.how2java.pojo.Skillcertificate">
+    insert into skillcertificate
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="scid != null">
+        scID,
+      </if>
+      <if test="scname != null">
+        scName,
+      </if>
+      <if test="sccontent != null">
+        scContent,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="scid != null">
+        #{scid,jdbcType=INTEGER},
+      </if>
+      <if test="scname != null">
+        #{scname,jdbcType=VARCHAR},
+      </if>
+      <if test="sccontent != null">
+        #{sccontent,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.how2java.pojo.Skillcertificate">
+    update skillcertificate
+    <set>
+      <if test="scname != null">
+        scName = #{scname,jdbcType=VARCHAR},
+      </if>
+      <if test="sccontent != null">
+        scContent = #{sccontent,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where scID = #{scid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.how2java.pojo.Skillcertificate">
+    update skillcertificate
+    set scName = #{scname,jdbcType=VARCHAR},
+      scContent = #{sccontent,jdbcType=VARCHAR}
+    where scID = #{scid,jdbcType=INTEGER}
+  </update>
+</mapper>
