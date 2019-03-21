@@ -9,6 +9,7 @@
     <result column="pHelpContacts" jdbcType="VARCHAR" property="phelpcontacts" />
     <result column="pHelpPhone" jdbcType="INTEGER" property="phelpphone" />
   </resultMap>
+
   <insert id="insert" parameterType="com.how2java.pojo.Poorstudentcard">
     insert into poorstudentcard (poorId, poorState, pObtainProgress, 
       pHelpContent, pHelpContacts, pHelpPhone
@@ -17,6 +18,7 @@
       #{phelpcontent,jdbcType=VARCHAR}, #{phelpcontacts,jdbcType=VARCHAR}, #{phelpphone,jdbcType=INTEGER}
       )
   </insert>
+
   <insert id="insertSelective" parameterType="com.how2java.pojo.Poorstudentcard">
     insert into poorstudentcard
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -60,4 +62,24 @@
       </if>
     </trim>
   </insert>
+
+  <select id="select" parameterType="int" resultType="com.how2java.pojo.Poorstudentcard">
+    SELECT * FROM poorstudentcard WHERE poorId = #{poorid};
+  </select>
+
+  <update id="update" parameterType="com.how2java.pojo.Poorstudentcard" >
+    UPDATE  poorstudentcard
+    <set>
+      <if test="poorstate != null">poorState=#{poorstate},</if>
+      <if test="pobtainprogress != null">pObtainProgress=#{pobtainprogress},</if>
+      <if test="phelpcontent != null">pHelpContent=#{phelpcontent},</if>
+      <if test="phelpcontacts != null">pHelpContacts=#{phelpcontacts},</if>
+      <if test="phelpphone != null">pHelpPhone=#{phelpphone}</if>
+    </set>
+    WHERE poorId = ${poorid}
+  </update>
+
+  <delete id="delete" parameterType="int">
+    DELETE FROM poorstudentcard WHERE poorId = ${poorid}
+  </delete>
 </mapper>

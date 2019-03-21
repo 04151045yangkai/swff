@@ -57,8 +57,8 @@ public class CategoryController {
 //
 //	}
 
-	@RequestMapping(value = "login", method = RequestMethod.POST)
 	@ResponseBody
+	@RequestMapping(value = "login", method = RequestMethod.POST)
 	public String login(@RequestParam("userId") int userId, @RequestParam("passWord") String passWord, @RequestParam("userFlag") int userFlag) {
 		System.out.println(userId+passWord+userFlag);
 		Login info = categoryService.login(new Login(userId,passWord,userFlag));
