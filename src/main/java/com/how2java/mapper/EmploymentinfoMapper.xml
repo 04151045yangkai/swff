@@ -141,4 +141,30 @@
       </if>
     </trim>
   </insert>
+
+  <select id="select" parameterType="int" resultType="com.how2java.pojo.Employmentinfo">
+    SELECT * FROM employmentinfo WHERE eiID = #{eiid};
+  </select>
+
+  <update id="update" parameterType="com.how2java.pojo.Employmentinfo" >
+    UPDATE  employmentinfo
+    <set>
+      <if test="eigraduation != null">eiGraduation=#{eigraduation},</if>
+      <if test="eiunitname != null">eiUnitName=#{eiunitname},</if>
+      <if test="eioriganizationcode != null">eiOrganizationCode=#{eioriganizationcode},</if>
+      <if test="eiunitproperties != null">eiUnitProperties=#{eiunitproperties},</if>
+      <if test="eiunitpindustry != null">eiUnitIndustry=#{eiunitpindustry}</if>
+      <if test="eicompanyaddress != null">eiCompanyAddress=#{eicompanyaddress},</if>
+      <if test="eijobposition != null">eiJobPosition=#{eijobposition},</if>
+      <if test="eicontacts != null">eiContacts=#{eicontacts},</if>
+      <if test="eicontactsphone != null">eiContactsPhone=#{eicontactsphone},</if>
+      <if test="eicontactemail != null">eiContactEmail=#{eicontactemail}</if>
+      <if test="eizipcode != null">eiZipCode=#{eizipcode},</if>
+      <if test="eifileforwardname != null">eiFileForwardName=#{eifileforwardname},</if>
+      <if test="eiffzipcode != null">eiFFZipCode=#{eiffzipcode},</if>
+      <if test="eitransferhousehold != null">eiTransferHousehold=#{eitransferhousehold},</if>
+      <if test="eifileforwardaddress != null">eiFileForwardAddress=#{eifileforwardaddress}</if>
+    </set>
+    WHERE eiID = ${eiid}
+  </update>
 </mapper>

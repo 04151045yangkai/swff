@@ -44,4 +44,18 @@
       </if>
     </trim>
   </insert>
+  <select id="select" parameterType="int" resultType="com.how2java.pojo.Obtainemployment">
+    SELECT * FROM obtainemployment WHERE oeId = #{oeid};
+  </select>
+
+  <update id="update" parameterType="com.how2java.pojo.Obtainemployment" >
+    UPDATE  obtainemployment
+    <set>
+      <if test="oeintent != null">oeIntent=#{oeintent},</if>
+      <if test="oeintentcity != null">oeIntentCity=#{oeintentcity},</if>
+      <if test="oeintentsalary != null">oeIntentSalary=#{oeintentsalary},</if>
+    </set>
+    WHERE oeID = ${oeid}
+  </update>
+
 </mapper>

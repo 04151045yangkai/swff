@@ -28,4 +28,16 @@
       </if>
     </trim>
   </insert>
+
+  <select id="select" parameterType="int" resultType="com.how2java.pojo.Certificateobtain">
+    SELECT * FROM certificateobtain WHERE coStuID = #{costuid};
+  </select>
+
+  <update id="update" parameterType="com.how2java.pojo.Certificateobtain" >
+    UPDATE  certificateobtain
+    <set>
+      <if test="coscid != null">coScId=#{coscid},</if>
+    </set>
+    WHERE coStuId = ${costuid}
+  </update>
 </mapper>
