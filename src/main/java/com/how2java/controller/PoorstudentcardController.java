@@ -1,22 +1,33 @@
 package com.how2java.controller;
 
 import com.how2java.service.impl.PoorstudentcardServiceImpl;
+import org.codehaus.jackson.annotate.JacksonAnnotation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
+import org.springframework.http.converter.json.Jackson2ObjectMapperFactoryBean;
 import org.springframework.stereotype.Controller;
 
 import com.alibaba.fastjson.JSONObject;
 import com.how2java.pojo.Poorstudentcard;
 import com.how2java.service.PoorstudentcardService;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class PoorstudentcardController {
 
     @Autowired
     PoorstudentcardServiceImpl poorstudentcardService;
+
+    @ResponseBody
+    @RequestMapping(value = "insertPoorstudentcardSelect" ,method = RequestMethod.POST)
+    public String insertSelective(@RequestBody Poorstudentcard poorstudentcard) {
+        int i = poorstudentcardService.addSelective(poorstudentcard);
+        if(i>0){
+            return "success insert : " + i;
+        }
+        return "fail";
+    }
+
 
     @RequestMapping(value = "insertPoorstudentcard" ,method = RequestMethod.POST)
     @ResponseBody
@@ -27,10 +38,9 @@ public class PoorstudentcardController {
                          @RequestParam("phelpcontacts") String phelpcontacts,
                          @RequestParam("phelpphone") int phelpphone){
 
-        System.out.println( poorstate + " "+ pobtainprogress+ " "+ phelpcontent);
         int i = poorstudentcardService.insert(new Poorstudentcard(poorid, poorstate, pobtainprogress, phelpcontent, phelpcontacts, phelpphone));
         if(i>0){
-            return "success";
+            return "success insert : " + i;
         }
         return "fail";
     }
@@ -44,9 +54,30 @@ public class PoorstudentcardController {
      */
     @ResponseBody
     @RequestMapping(value = "loadPoorCardData" ,method = RequestMethod.POST)
-    public String loadDataByID( @RequestParam("poorid") Integer poorid) {
+        public String loadDataByID( @RequestParam("poorid") Integer poorid) {
         Poorstudentcard poorstudentcard = poorstudentcardService.checkDataByID(poorid);
         return  JSONObject.toJSON(poorstudentcard).toString();
     }
+
+    @ResponseBody
+    @RequestMapping(value = "deletePoorCarData" ,method = RequestMethod.POST)
+    public String deleteDataByID( @RequestParam("poorid") Integer poorid) {
+        int result = poorstudentcardService.deleteInfoByData(poorid);
+        if (result > 0) {
+            return "success";
+        }else
+            return "fail";
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "updatePoorCarData" ,method = RequestMethod.POST)
+        public String UpdatePoorCarData( @RequestBody Poorstudentcard poorstudentcard) {
+        int result = poorstudentcardService.UpdateFromValue(poorstudentcard);
+        if (result > 0) {
+            return "success";
+        }else
+            return "fail";
+    }
+
 
 }

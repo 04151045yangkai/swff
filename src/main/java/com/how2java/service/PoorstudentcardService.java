@@ -27,8 +27,8 @@ public interface PoorstudentcardService {
     /**
      * 删除信息;
      *
-     * @param poorID 需要删除的用户ID
+     * @param poorid 需要删除的用户ID
      */
-    void deleteInfoByData(int poorID);
+    int deleteInfoByData(int poorid);
 
 }

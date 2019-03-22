@@ -29,7 +29,7 @@ public interface PoorstudentcardMapper {
      * 删除信息;
      * @param poorid 需要删除的用户ID
      */
-    void delete(int poorid);
+    int delete(int poorid);
 
 
 }

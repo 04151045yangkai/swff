@@ -80,6 +80,6 @@
   </update>
 
   <delete id="delete" parameterType="int">
-    DELETE FROM poorstudentcard WHERE poorId = ${poorid}
+    DELETE FROM poorstudentcard WHERE poorId = #{poorid}
   </delete>
 </mapper>

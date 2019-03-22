@@ -35,8 +35,7 @@ public class PoorstudentcardServiceImpl implements PoorstudentcardService {
     }
 
     @Override
-    public void deleteInfoByData(int poorID) {
-        poorstudentcardMapper.delete(poorID);
-
+    public int deleteInfoByData(int poorID) {
+        return poorstudentcardMapper.delete(poorID);
     }
 }
