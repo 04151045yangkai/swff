@@ -43,7 +43,12 @@ public class Login implements Serializable {
                 '}';
     }
 
-    public Login(int userId, String passWord, int userFlag) {
+    public Login(int userId, String passWord) {
+        this.userId = userId;
+        this.passWord = passWord;
+    }
+
+    public Login(int userId, String passWord ,int userFlag) {
         this.userId = userId;
         this.passWord = passWord;
         this.userFlag = userFlag;

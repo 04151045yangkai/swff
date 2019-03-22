@@ -132,4 +132,21 @@ public class Account {
     public void setEmail(String email) {
         this.email = email;
     }
+
+
+    public Account(String idCard, Integer auserId, String politics, String nation, String majorField, Date birthday, String archivesInSchool, String rResidenceInSchool, String archivesPath, String rResidencePath, Integer qqNum, Integer phoneNum, String email) {
+        this.idCard = idCard;
+        AuserId = auserId;
+        this.politics = politics;
+        this.nation = nation;
+        this.majorField = majorField;
+        this.birthday = birthday;
+        this.archivesInSchool = archivesInSchool;
+        this.rResidenceInSchool = rResidenceInSchool;
+        this.archivesPath = archivesPath;
+        this.rResidencePath = rResidencePath;
+        this.qqNum = qqNum;
+        this.phoneNum = phoneNum;
+        this.email = email;
+    }
 }

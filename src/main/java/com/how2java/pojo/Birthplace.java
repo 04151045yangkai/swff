@@ -70,4 +70,14 @@ public class Birthplace {
     public void setIssuballowance(String isSuballowance) {
         this.isSuballowance = isSuballowance;
     }
+
+    public Birthplace(Integer birthId, String birthPath, String cityOrTownship, String address, Integer homePhone, Integer zipCode, String isSuballowance) {
+        this.birthId = birthId;
+        this.birthPath = birthPath;
+        this.cityOrTownship = cityOrTownship;
+        this.address = address;
+        this.homePhone = homePhone;
+        this.zipCode = zipCode;
+        this.isSuballowance = isSuballowance;
+    }
 }

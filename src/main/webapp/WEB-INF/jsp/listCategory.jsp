@@ -6,13 +6,15 @@
  <div style="width:500px;margin:0px auto;text-align:center">
 	<table align='center' border='1' cellspacing='0'>
 	    <tr>
-	        <td>id</td>
-	        <td>name</td>
+	        <td>userId</td>
+	        <td>passWord</td>
+			<td>userFlag</td>
 	    </tr>
-	    <c:forEach items="${cs}" var="c" varStatus="st">
+	    <c:forEach items="${logins}" var="c" varStatus="st">
 	        <tr>
-	            <td>${c.id}</td>
-	            <td>${c.name}</td>
+	            <td>${c.userId}</td>
+	            <td>${c.passWord}</td>
+				<td>${c.userFlag}</td>
 	        </tr>
 	    </c:forEach>
 	</table>
