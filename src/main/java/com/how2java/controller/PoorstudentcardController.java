@@ -1,19 +1,13 @@
 package com.how2java.controller;
 
-<<<<<<< HEAD
-=======
-
-import com.alibaba.fastjson.JSONObject;
->>>>>>> origin/master
-import com.how2java.pojo.Poorstudentcard;
-import com.how2java.service.PoorstudentcardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+
+import com.alibaba.fastjson.JSONObject;
+import com.how2java.pojo.Poorstudentcard;
+import com.how2java.service.PoorstudentcardService;
 import org.springframework.web.bind.annotation.RequestMapping;
-<<<<<<< HEAD
-=======
 import org.springframework.web.bind.annotation.RequestMethod;
->>>>>>> origin/master
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -36,7 +30,6 @@ public class PoorstudentcardController {
             return "success";
         }
         return "fail";
-
     }
 
     /**
@@ -49,7 +42,7 @@ public class PoorstudentcardController {
     @ResponseBody
     @RequestMapping(value = "loadPoorCardData" ,method = RequestMethod.POST)
     public String loadDataByID( @RequestParam("poorid") Integer poorid) {
-        Poorstudentcard poorstudentcard = pService.checkDataByID(poorid);
+        Poorstudentcard poorstudentcard = poorstudentcardService.checkDataByID(poorid);
         return  JSONObject.toJSON(poorstudentcard).toString();
     }
 
