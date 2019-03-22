@@ -17,7 +17,7 @@ public class ObtainemploymentController {
     ObtainemploymentService oeService;
 
     @ResponseBody
-    @RequestMapping(value = "loadPoorCardData" ,method = RequestMethod.POST)
+    @RequestMapping(value = "loadObtainEmployData" ,method = RequestMethod.POST)
     public String loadDataByID( @RequestParam("oeid") Integer oeid) {
         Obtainemployment obtainemployment = oeService.checkDataByID(oeid);
         return  JSONObject.toJSON(obtainemployment).toString();

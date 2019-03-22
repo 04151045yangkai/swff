@@ -27,10 +27,10 @@
 	
 	  </property>  
 	  <property name="username">  
-	      <value>root</value>  
+	      <value>css</value>
 	  </property>  
 	  <property name="password">  
-	      <value>admin</value>
+	      <value>456789/*-</value>
 	  </property>  	
 	</bean>
 	

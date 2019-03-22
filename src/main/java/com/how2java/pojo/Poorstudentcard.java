@@ -13,6 +13,18 @@ public class Poorstudentcard {
 
     private Integer phelpphone;
 
+    public Poorstudentcard() {
+    }
+
+    public Poorstudentcard(Integer poorid, String poorstate, String pobtainprogress, String phelpcontent, String phelpcontacts, Integer phelpphone) {
+        this.poorid = poorid;
+        this.poorstate = poorstate;
+        this.pobtainprogress = pobtainprogress;
+        this.phelpcontent = phelpcontent;
+        this.phelpcontacts = phelpcontacts;
+        this.phelpphone = phelpphone;
+    }
+
     public Integer getPoorid() {
         return poorid;
     }
@@ -61,12 +73,5 @@ public class Poorstudentcard {
         this.phelpphone = phelpphone;
     }
 
-    public Poorstudentcard(Integer poorid, String poorstate, String pobtainprogress, String phelpcontent, String phelpcontacts, Integer phelpphone) {
-        this.poorid = poorid;
-        this.poorstate = poorstate;
-        this.pobtainprogress = pobtainprogress;
-        this.phelpcontent = phelpcontent;
-        this.phelpcontacts = phelpcontacts;
-        this.phelpphone = phelpphone;
-    }
+
 }
