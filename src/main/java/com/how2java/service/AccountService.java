@@ -14,4 +14,6 @@ public interface AccountService {
 
 
     int updateByPrimaryKey(Account record);//更新
+
+    public int updateByPrimaryKeySelective(Account record);
 }

@@ -1,5 +1,6 @@
 package com.how2java.controller;
 
+import com.how2java.service.impl.PoorstudentcardServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
@@ -15,7 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class PoorstudentcardController {
 
     @Autowired
-    PoorstudentcardService poorstudentcardService;
+    PoorstudentcardServiceImpl poorstudentcardService;
 
     @RequestMapping("insertPoorstudentcard")
     @ResponseBody

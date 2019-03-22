@@ -4,15 +4,16 @@ import com.how2java.pojo.Poorstudentcard;
 
 public interface PoorstudentcardService {
 
-<<<<<<< HEAD
+
     int insert(Poorstudentcard record);
-=======
+
     int add(Poorstudentcard poorstudentcard);
 
     int addSelective(Poorstudentcard record);
 
     /**
      * 查询用户ID 的建档立卡信息
+     *
      * @param poorid 用户ID
      * @return 返回信息参数，若无返回null
      */
@@ -20,6 +21,7 @@ public interface PoorstudentcardService {
 
     /**
      * 更新用户档案表
+     *
      * @param poorstudentcard
      * @return
      */
@@ -27,8 +29,9 @@ public interface PoorstudentcardService {
 
     /**
      * 删除信息;
+     *
      * @param poorID 需要删除的用户ID
      */
     void deleteInfoByData(int poorID);
->>>>>>> origin/master
+
 }

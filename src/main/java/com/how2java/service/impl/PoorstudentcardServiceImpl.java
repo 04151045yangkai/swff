@@ -7,19 +7,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-<<<<<<< HEAD
-public class PoorstudentcardServiceImpl implements PoorstudentcardService{
+
+public class PoorstudentcardServiceImpl implements PoorstudentcardService {
 
     @Autowired
     PoorstudentcardMapper poorstudentcardMapper;
+
     @Override
     public int insert(Poorstudentcard record) {
         return poorstudentcardMapper.insert(record);
-=======
-public class PoorstudentcardServiceImpl implements PoorstudentcardService {
-    @Autowired
-    PoorstudentcardMapper poorstudentcardMapper;
-
+    }
 
     @Override
     public int add(Poorstudentcard poorstudentcard) {
@@ -44,6 +41,6 @@ public class PoorstudentcardServiceImpl implements PoorstudentcardService {
     @Override
     public void deleteInfoByData(int poorID) {
         poorstudentcardMapper.delete(poorID);
->>>>>>> origin/master
+
     }
 }
