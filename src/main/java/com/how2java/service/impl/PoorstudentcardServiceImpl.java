@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
+<<<<<<< HEAD
 public class PoorstudentcardServiceImpl implements PoorstudentcardService{
 
     @Autowired
@@ -14,5 +15,35 @@ public class PoorstudentcardServiceImpl implements PoorstudentcardService{
     @Override
     public int insert(Poorstudentcard record) {
         return poorstudentcardMapper.insert(record);
+=======
+public class PoorstudentcardServiceImpl implements PoorstudentcardService {
+    @Autowired
+    PoorstudentcardMapper poorstudentcardMapper;
+
+
+    @Override
+    public int add(Poorstudentcard poorstudentcard) {
+        return poorstudentcardMapper.insert(poorstudentcard);
+    }
+
+    @Override
+    public int addSelective(Poorstudentcard record) {
+        return poorstudentcardMapper.insertSelective(record);
+    }
+
+    @Override
+    public Poorstudentcard checkDataByID(int poolID) {
+        return poorstudentcardMapper.select(poolID);
+    }
+
+    @Override
+    public int UpdateFromValue(Poorstudentcard poorstudentcard) {
+        return poorstudentcardMapper.update(poorstudentcard);
+    }
+
+    @Override
+    public void deleteInfoByData(int poorID) {
+        poorstudentcardMapper.delete(poorID);
+>>>>>>> origin/master
     }
 }
