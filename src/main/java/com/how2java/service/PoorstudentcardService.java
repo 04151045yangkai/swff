@@ -4,10 +4,7 @@ import com.how2java.pojo.Poorstudentcard;
 
 public interface PoorstudentcardService {
 
-
     int insert(Poorstudentcard record);
-
-    int add(Poorstudentcard poorstudentcard);
 
     int addSelective(Poorstudentcard record);
 

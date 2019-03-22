@@ -14,7 +14,7 @@
     insert into poorstudentcard (poorId, poorState, pObtainProgress, 
       pHelpContent, pHelpContacts, pHelpPhone
       )
-    values (#{poorid,jdbcType=INTEGER}, #{poorstate,jdbcType=CHAR}, #{pobtainprogress,jdbcType=VARCHAR}, 
+    values (#{poorid,jdbcType=INTEGER}, #{poorstate,jdbcType=VARCHAR}, #{pobtainprogress,jdbcType=VARCHAR},
       #{phelpcontent,jdbcType=VARCHAR}, #{phelpcontacts,jdbcType=VARCHAR}, #{phelpphone,jdbcType=INTEGER}
       )
   </insert>

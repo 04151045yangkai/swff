@@ -18,10 +18,6 @@ public class PoorstudentcardServiceImpl implements PoorstudentcardService {
         return poorstudentcardMapper.insert(record);
     }
 
-    @Override
-    public int add(Poorstudentcard poorstudentcard) {
-        return poorstudentcardMapper.insert(poorstudentcard);
-    }
 
     @Override
     public int addSelective(Poorstudentcard record) {

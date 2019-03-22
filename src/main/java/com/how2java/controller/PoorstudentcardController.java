@@ -18,7 +18,7 @@ public class PoorstudentcardController {
     @Autowired
     PoorstudentcardServiceImpl poorstudentcardService;
 
-    @RequestMapping("insertPoorstudentcard")
+    @RequestMapping(value = "insertPoorstudentcard" ,method = RequestMethod.POST)
     @ResponseBody
     public String insert(@RequestParam("poorid") int poorid ,
                          @RequestParam("poorstate") String poorstate,
@@ -26,6 +26,8 @@ public class PoorstudentcardController {
                          @RequestParam("phelpcontent") String phelpcontent,
                          @RequestParam("phelpcontacts") String phelpcontacts,
                          @RequestParam("phelpphone") int phelpphone){
+
+        System.out.println( poorstate + " "+ pobtainprogress+ " "+ phelpcontent);
         int i = poorstudentcardService.insert(new Poorstudentcard(poorid, poorstate, pobtainprogress, phelpcontent, phelpcontacts, phelpphone));
         if(i>0){
             return "success";
