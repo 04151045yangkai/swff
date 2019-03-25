@@ -2,18 +2,18 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.how2java.mapper.AccountMapper">
   <resultMap id="BaseResultMap" type="com.how2java.pojo.Account">
-    <id column="idCard" jdbcType="VARCHAR" property="idcard" />
-    <result column="AuserId" jdbcType="INTEGER" property="auserid" />
-    <result column="politics" jdbcType="CHAR" property="politics" />
-    <result column="nation" jdbcType="CHAR" property="nation" />
-    <result column="majorField" jdbcType="VARCHAR" property="majorfield" />
-    <result column="birthday" jdbcType="DATE" property="birthday" />
-    <result column="archivesInSchool" jdbcType="CHAR" property="archivesinschool" />
-    <result column="rResidenceInSchool" jdbcType="CHAR" property="rresidenceinschool" />
-    <result column="archivesPath" jdbcType="VARCHAR" property="archivespath" />
-    <result column="rResidencePath" jdbcType="VARCHAR" property="rresidencepath" />
-    <result column="qqNum" jdbcType="INTEGER" property="qqnum" />
-    <result column="phoneNum" jdbcType="INTEGER" property="phonenum" />
+    <id column="idCard" jdbcType="VARCHAR" property="idCard" />
+    <result column="AuserId" jdbcType="INTEGER" property="AuserId" />
+    <result column="politics" jdbcType="VARCHAR" property="politics" />
+    <result column="nation" jdbcType="VARCHAR" property="nation" />
+    <result column="majorField" jdbcType="VARCHAR" property="majorField" />
+    <result column="birthday" jdbcType="VARCHAR" property="birthday" />
+    <result column="archivesInSchool" jdbcType="VARCHAR" property="archivesInSchool" />
+    <result column="rResidenceInSchool" jdbcType="VARCHAR" property="rResidenceInSchool" />
+    <result column="archivesPath" jdbcType="VARCHAR" property="archivesPath" />
+    <result column="rResidencePath" jdbcType="VARCHAR" property="rResidencePath" />
+    <result column="qqNum" jdbcType="INTEGER" property="qqNum" />
+    <result column="phoneNum" jdbcType="INTEGER" property="phoneNum" />
     <result column="email" jdbcType="VARCHAR" property="email" />
   </resultMap>
   <sql id="Base_Column_List">
@@ -40,10 +40,10 @@
       archivesInSchool, rResidenceInSchool, archivesPath, 
       rResidencePath, qqNum, phoneNum, 
       email)
-    values (#{idcard,jdbcType=VARCHAR}, #{auserid,jdbcType=INTEGER}, #{politics,jdbcType=CHAR}, 
-      #{nation,jdbcType=CHAR}, #{majorfield,jdbcType=VARCHAR}, #{birthday,jdbcType=DATE}, 
-      #{archivesinschool,jdbcType=CHAR}, #{rresidenceinschool,jdbcType=CHAR}, #{archivespath,jdbcType=VARCHAR}, 
-      #{rresidencepath,jdbcType=VARCHAR}, #{qqnum,jdbcType=INTEGER}, #{phonenum,jdbcType=INTEGER}, 
+    values (#{idCard,jdbcType=VARCHAR}, #{AuserId,jdbcType=INTEGER}, #{politics,jdbcType=VARCHAR},
+      #{nation,jdbcType=VARCHAR}, #{majorField,jdbcType=VARCHAR}, #{birthday,jdbcType=VARCHAR},
+      #{archivesInSchool,jdbcType=VARCHAR}, #{rResidenceInSchool,jdbcType=VARCHAR}, #{archivesPath,jdbcType=VARCHAR},
+      #{rResidencePath,jdbcType=VARCHAR}, #{qqNum,jdbcType=INTEGER}, #{phoneNum,jdbcType=INTEGER},
       #{email,jdbcType=VARCHAR})
   </insert>
 
@@ -98,22 +98,22 @@
         #{auserid,jdbcType=INTEGER},
       </if>
       <if test="politics != null">
-        #{politics,jdbcType=CHAR},
+        #{politics,jdbcType=VARCHAR},
       </if>
       <if test="nation != null">
-        #{nation,jdbcType=CHAR},
+        #{nation,jdbcType=VARCHAR},
       </if>
       <if test="majorfield != null">
         #{majorfield,jdbcType=VARCHAR},
       </if>
       <if test="birthday != null">
-        #{birthday,jdbcType=DATE},
+        #{birthday,jdbcType=VARCHAR},
       </if>
       <if test="archivesinschool != null">
-        #{archivesinschool,jdbcType=CHAR},
+        #{archivesinschool,jdbcType=VARCHAR},
       </if>
       <if test="rresidenceinschool != null">
-        #{rresidenceinschool,jdbcType=CHAR},
+        #{rresidenceinschool,jdbcType=VARCHAR},
       </if>
       <if test="archivespath != null">
         #{archivespath,jdbcType=VARCHAR},
@@ -140,22 +140,22 @@
         AuserId = #{auserid,jdbcType=INTEGER},
       </if>
       <if test="politics != null">
-        politics = #{politics,jdbcType=CHAR},
+        politics = #{politics,jdbcType=VARCHAR},
       </if>
       <if test="nation != null">
-        nation = #{nation,jdbcType=CHAR},
+        nation = #{nation,jdbcType=VARCHAR},
       </if>
       <if test="majorfield != null">
         majorField = #{majorfield,jdbcType=VARCHAR},
       </if>
       <if test="birthday != null">
-        birthday = #{birthday,jdbcType=DATE},
+        birthday = #{birthday,jdbcType=VARCHAR},
       </if>
       <if test="archivesinschool != null">
-        archivesInSchool = #{archivesinschool,jdbcType=CHAR},
+        archivesInSchool = #{archivesinschool,jdbcType=VARCHAR},
       </if>
       <if test="rresidenceinschool != null">
-        rResidenceInSchool = #{rresidenceinschool,jdbcType=CHAR},
+        rResidenceInSchool = #{rresidenceinschool,jdbcType=VARCHAR},
       </if>
       <if test="archivespath != null">
         archivesPath = #{archivespath,jdbcType=VARCHAR},
@@ -179,12 +179,12 @@
   <update id="updateByPrimaryKey" parameterType="com.how2java.pojo.Account">
     update account
     set AuserId = #{auserid,jdbcType=INTEGER},
-      politics = #{politics,jdbcType=CHAR},
-      nation = #{nation,jdbcType=CHAR},
+      politics = #{politics,jdbcType=VARCHAR},
+      nation = #{nation,jdbcType=VARCHAR},
       majorField = #{majorfield,jdbcType=VARCHAR},
-      birthday = #{birthday,jdbcType=DATE},
-      archivesInSchool = #{archivesinschool,jdbcType=CHAR},
-      rResidenceInSchool = #{rresidenceinschool,jdbcType=CHAR},
+      birthday = #{birthday,jdbcType=VARCHAR},
+      archivesInSchool = #{archivesinschool,jdbcType=VARCHAR},
+      rResidenceInSchool = #{rresidenceinschool,jdbcType=VARCHAR},
       archivesPath = #{archivespath,jdbcType=VARCHAR},
       rResidencePath = #{rresidencepath,jdbcType=VARCHAR},
       qqNum = #{qqnum,jdbcType=INTEGER},

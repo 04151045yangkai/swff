@@ -30,4 +30,10 @@ public class Skillcertificate {
     public void setSccontent(String sccontent) {
         this.sccontent = sccontent == null ? null : sccontent.trim();
     }
+
+    public Skillcertificate(Integer scid, String scname, String sccontent) {
+        this.scid = scid;
+        this.scname = scname;
+        this.sccontent = sccontent;
+    }
 }

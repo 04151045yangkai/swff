@@ -13,7 +13,7 @@
     select 
     <include refid="Base_Column_List" />
     from login
-    where userId = #{userid,jdbcType=INTEGER}
+    where userId = #{userId,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from login
@@ -64,13 +64,13 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="com.how2java.pojo.Login">
     update login
-    set passWord = #{passWord,jdbcType=VARCHAR},
-      userFlag = #{userFlag,jdbcType=INTEGER}
-    where userId = #{userId,jdbcType=INTEGER}
+    set passWord = #{password,jdbcType=VARCHAR},
+      userFlag = #{userflag,jdbcType=INTEGER}
+    where userId = #{userid,jdbcType=INTEGER}
   </update>
 
   <select id="login" resultType="Login" parameterType="com.how2java.pojo.Login" >
-    select * from Login where userId=#{userId} and passWord=#{passWord}
+    select * from Login where userId=#{userid} and passWord=#{password}
     </select>
 
   <select id="selectAllUser" resultType="Login" parameterType="com.how2java.pojo.Login">

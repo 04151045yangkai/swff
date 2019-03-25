@@ -186,10 +186,10 @@ a:hover {
 			</div>
 
 		</div>
-		<div id="botton_div">
-			没有账号请<a href="/MyFirstProject/regist.jsp"><font
-				style="color:white">注册</font> </a>
-		</div>
+		<%--<div id="botton_div">--%>
+			<%--没有账号请<a href="/MyFirstProject/regist.jsp"><font--%>
+				<%--style="color:white">注册</font> </a>--%>
+		<%--</div>--%>
 	</form>
 	<div align="center" style="color:red;border-width:0px;">${login_msg}</div>
 	<script type="text/javascript">

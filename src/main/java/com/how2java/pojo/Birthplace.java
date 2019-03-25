@@ -1,6 +1,6 @@
 package com.how2java.pojo;
 
-public class Birthplace {
+public class  Birthplace {
     private Integer birthId;
 
     private String birthPath;

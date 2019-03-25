@@ -86,7 +86,7 @@ a:hover {
 	</caption>
 	<form action="${pageContext.request.contextPath}/delmore" method="post"
 		onsubmit="return suredel()">
-		<table width="85%" height=30px " border=1 cellspacing="0"
+		<table width="85%" height=30px" border=1 cellspacing="0"
 			cellpadding="10" align="center">
 			<tr width="85%" height="30px">
 				<th><input type="checkbox" id="top_cb" onclick="checked()" />

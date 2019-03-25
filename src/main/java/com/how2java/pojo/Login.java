@@ -1,59 +1,58 @@
 package com.how2java.pojo;
 
-import java.io.Serializable;
+public class Login {
 
-public class Login implements Serializable {
+    private int userid;
 
-    private int userId;
+    private String password;
 
-    private String passWord;
+    private int  userflag;
 
-    private int  userFlag;
-
-    public int getUserId() {
-        return userId;
+    public Login() {
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public Login(int userid, String password) {
+        this.userid = userid;
+        this.password = password;
     }
 
-    public String getPassWord() {
-        return passWord;
+    public Login(int userid, String password, int userflag) {
+
+        this.userid = userid;
+        this.password = password;
+        this.userflag = userflag;
     }
 
-    public void setPassWord(String passWord) {
-        this.passWord = passWord;
+    public int getUserid() {
+        return userid;
     }
 
-    public int getUserFlag() {
-        return userFlag;
+    public void setUserid(int userid) {
+        this.userid = userid;
     }
 
-    public void setUserFlag(int userFlag) {
-        this.userFlag = userFlag;
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public int getUserflag() {
+        return userflag;
+    }
+
+    public void setUserflag(int userflag) {
+        this.userflag = userflag;
     }
 
     @Override
     public String toString() {
         return "Login{" +
-                "userId=" + userId +
-                ", passWord='" + passWord + '\'' +
-                ", userFlag=" + userFlag +
+                "userid=" + userid +
+                ", password='" + password + '\'' +
+                ", userflag=" + userflag +
                 '}';
-    }
-
-    public Login(int userId, String passWord) {
-        this.userId = userId;
-        this.passWord = passWord;
-    }
-
-    public Login(int userId, String passWord ,int userFlag) {
-        this.userId = userId;
-        this.passWord = passWord;
-        this.userFlag = userFlag;
-    }
-    public Login() {
-
     }
 }

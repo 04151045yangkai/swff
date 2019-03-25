@@ -40,14 +40,14 @@ a {
 }
 </style>
 </head>
-<c:if test="${empty user}">
+<c:if test="${empty loginInfo}">
 	<body>
 		<div >
 			您尚未登录,请先<a href="${pageContext.request.contextPath}/login.jsp">登录</a>
 		</div>
 	</body>
 </c:if>
-<c:if test="${not empty user}">
+<c:if test="${not empty loginInfo}">
 	<frameset rows="22%,*" border="5" bordercolor="#91CEC4">
 		<frame noresize="noresize"
 			src="${pageContext.request.contextPath}/main_top.jsp" scrolling="no" />

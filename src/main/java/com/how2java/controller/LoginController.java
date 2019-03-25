@@ -7,16 +7,15 @@ import com.how2java.pojo.Login;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.how2java.service.LoginService;
 import com.how2java.util.Page;
+
+import javax.servlet.http.HttpServletRequest;
 
 import static java.awt.SystemColor.info;
 
@@ -45,21 +44,21 @@ public class LoginController {
 	}
 
 	@RequestMapping(value = "login", method = RequestMethod.POST) //用户登陆功能
-	@ResponseBody
-	public String login(@RequestParam("userId") int userId, @RequestParam("passWord") String passWord) {
+	public ModelAndView login(@RequestParam("userId") int userId, @RequestParam("passWord") String passWord, HttpServletRequest request) {
 		Login info = loginService.login(new Login(userId,passWord));
-
-		if (info != null) {
-			return "success";
-		}
-        return "fail";
-
+		ModelAndView mod = new ModelAndView();
+		request.getSession().setAttribute("user", info);
+		//放入转发的参数
+		mod.addObject("loginInfo",info);
+		//放入jsp路径
+		mod.setViewName("main");//最后跳转到main.jsp
+		return mod;
 	}
 
 	@RequestMapping(value = "addLoginUser", method = RequestMethod.POST) //新增用户功能
 	@ResponseBody
-	public String addLoginUser(@RequestParam("userId") int userId, @RequestParam("passWord") String passWord,@RequestParam("passWord") int userFlag) {
-		int i = loginService.insertSelective(new Login(userId, passWord, userFlag));
+	public String addLoginUser(@RequestParam("userid") int userid, @RequestParam("password") String password,@RequestParam("userflag") int userflag) {
+		int i = loginService.insertSelective(new Login(userid, password, userflag));
 
 		if (i>0) {
 			return "success";

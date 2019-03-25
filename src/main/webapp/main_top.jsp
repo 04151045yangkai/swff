@@ -68,9 +68,9 @@ margin-left:800px;
 </head>
 
 <body>
-	<h1 style="text-align:center;color:#4CB8A0;font-size:35px;">客户管理系统</h1>
+	<h1 style="text-align:center;color:#4CB8A0;font-size:35px;">大学生就业管理系统</h1>
 	<div id="top_div">
-		<span style="color:#4CB8A0;">${user.username}  欢迎你!!!&nbsp;</span> <a
+		<span style="color:#4CB8A0;">${user.userid}  欢迎你!!!&nbsp;</span> <a
 			href="javascript:void(0)" onclick="safe_exit()">安全退出</a>
 	</div>
 	<div id="time_div" style="color:#4CB8A0;"></div>

@@ -56,22 +56,27 @@ a:hover {
 </head>
 
 <body>
-	<!-- 
+
 <div id="select_customer">
-		<a href="${pageContext.request.contextPath}/findall"
-			target="mycontent">查询所有客户</a>
-	</div> -->
+		<a href="${pageContext.request.contextPath}/selectAllUser"
+			target="mycontent">查询所有用户</a>
+	</div>
 	<div id="company_introduction">
 		<a href="${pageContext.request.contextPath}/Welcome.jsp"
 			target="mycontent">公司简介</a>
 	</div>
 
 	<div id="add_customer">
-		<a href="${pageContext.request.contextPath}/addcustomer.jsp"
-			target="mycontent">添加客户</a>
+		<a href="${pageContexaccountt.request.contextPath}/addcustomer.jsp"
+			target="mycontent">添加学生账号</a>
 	</div>
+    <div id="add_">
+	<a href="${pageContext.request.contextPath}/addAccount.jsp"
+	   target="mycontent">添加用户</a>
+    </div>
+
 	<div id="select_customer">
-		<a href="${pageContext.request.contextPath}/page" target="mycontent">分组查询客户</a>
+		<a href="${pageContext.request.contextPath}/page" target="mycontent">分组查询用户</a>
 	</div>
 
 </body>

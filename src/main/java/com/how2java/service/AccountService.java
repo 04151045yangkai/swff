@@ -12,8 +12,6 @@ public interface AccountService {
 
     Account selectByPrimaryKey(String idcard);//查
 
-
+    int updateByPrimaryKeySelective(Account record);//更新
     int updateByPrimaryKey(Account record);//更新
-
-    public int updateByPrimaryKeySelective(Account record);
 }

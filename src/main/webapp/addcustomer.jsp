@@ -123,48 +123,60 @@ textarea {
 </head>
 
 <body>
-	<form action="${pageContext.request.contextPath}/addcustomer"
+	<form action="${pageContext.request.contextPath}/addLoginUser"
 		method="post" onsubmit="return checkall()">
 		<div id="add_div">
-			<font size="5">添加用户</font>
+			<font size="5">添加学生用户</font>
 		</div>
 		<table cellpadding="1" cellspacing="0">
 			<tr>
-				<td class="t"></td>
-				<td><input type="text" name="cname" id="cname" value=""
+				<td class="t">用户ID</td>
+				<td><input type="text" name="userid" id="userid" value=""
 					placeholder="请输入用户ID" onblur="onblurcname()" /> <span
 					id="cnamespan"></span></td>
 			</tr>
 			<tr>
-				<td class="t">客户年龄</td>
-				<td><input type="text" name="age" id="age" value=""
-					placeholder="请输入客户年龄" onblur="onblurage()" /> <span id="agespan"></span>
-				</td>
+			<td class="t">用户初始密码</td>
+			<td><input type="text" name="password" id="password" value=""
+			placeholder="请输入用户初始密码" onblur="onblurage()" /> <span id="agespan"></span>
+			</td>
 			</tr>
 			<tr>
-				<td class="t">客户性别</td>
-				<td><input type="radio" name="gender" id="" value="男"
-					checked="checked" />男 <input type="radio" name="gender" id=""
-					value="女" />女</td>
+			<td class="t">用户权限</td>
+			<td><input type="text" name="userflag" id="userflag" value=""
+			placeholder="请输入用户权限" onblur="onblurage()" /> <span id="agespan"></span>
+			</td>
 			</tr>
-			<tr>
-				<td class="t">客户邮箱</td>
-				<td><input type="text" name="email" id="email" value=""
-					placeholder="请输入客户邮箱" onblur="onbluremail()" /> <span
-					id="emailspan"></span></td>
-			</tr>
-			<tr>
-				<td class="t">客户电话</td>
-				<td><input type="text" name="telephone" id="tel" value=""
-					placeholder="请输入客户电话" onblur="onblurtel()" /><span id="telspan"></span>
-				</td>
-			</tr>
-			<tr>
-				<td class="t">客户信息</td>
-				<td><textarea name="description" rows="5" cols="20" id="text"
-						onblur="onblurtext()"></textarea> <span id="textspan"></span>
-				</td>
-			</tr>
+			<%--<tr>--%>
+				<%--<td class="t">用户年龄</td>--%>
+				<%--<td><input type="text" name="age" id="age" value=""--%>
+					<%--placeholder="请输入客户年龄" onblur="onblurage()" /> <span id="agespan"></span>--%>
+				<%--</td>--%>
+			<%--</tr>--%>
+			<%--<tr>--%>
+				<%--<td class="t">用户性别</td>--%>
+				<%--<td><input type="radio" name="gender" id="" value="男"--%>
+					<%--checked="checked" />男 <input type="radio" name="gender" id=""--%>
+					<%--value="女" />女</td>--%>
+			<%--</tr>--%>
+			<%--<tr>--%>
+				<%--<td class="t">用户邮箱</td>--%>
+				<%--<td><input type="text" name="email" id="email" value=""--%>
+					<%--placeholder="请输入客户邮箱" onblur="onbluremail()" /> <span--%>
+					<%--id="emailspan"></span></td>--%>
+			<%--</tr>--%>
+			<%--<tr>--%>
+				<%--<td class="t">用户电话</td>--%>
+				<%--<td><input type="text" name="telephone" id="tel" value=""--%>
+					<%--placeholder="请输入客户电话" onblur="onblurtel()" /><span id="telspan"></span>--%>
+				<%--</td>--%>
+			<%--</tr>--%>
+			<%--<tr>--%>
+				<%--<td class="t">用户信息</td>--%>
+				<%--<td><textarea name="description" rows="5" cols="20" id="text"--%>
+						<%--onblur="onblurtext()"></textarea> <span id="textspan"></span>--%>
+				<%--</td>--%>
+			<%--</tr>--%>
 			<tr>
 				<td colspan="2"><input id="sub_in" type="submit" value="添加" />
 					<input id="res_in" type="reset" value="重置" />
@@ -187,14 +199,7 @@ textarea {
 			<p>6:只有所有信息按照规定格式书写才可允许提交</p>
 			<hr>
 			<pre>
-　　　　　　　\\\|/// 
-　　　　　　\\　.-.-　// 
-.　　　　　　(　.@.@　) 
-+-------oOOo-----(_)-----oOOo---------+ 
-|　　　 　　　　　　　　　　　　　　　| 
-|　    　圣   诞   快  乐！！！ 　  　| 
-|　　　　　　　　　　　　　　　　 　　| 
-+---------------------Oooo------------+
+
 </pre>
 		</div>
 	</form>

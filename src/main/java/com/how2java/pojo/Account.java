@@ -1,6 +1,5 @@
 package com.how2java.pojo;
 
-import java.util.Date;
 
 public class Account {
     private String idCard;
@@ -13,7 +12,7 @@ public class Account {
 
     private String majorField;
 
-    private Date birthday;
+    private String birthday;
 
     private String archivesInSchool;
 
@@ -69,11 +68,11 @@ public class Account {
         this.majorField = majorField;
     }
 
-    public Date getBirthday() {
+    public String getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(Date birthday) {
+    public void setBirthday(String birthday) {
         this.birthday = birthday;
     }
 
@@ -133,13 +132,9 @@ public class Account {
         this.email = email;
     }
 
-
-    public Account() {
-    }
-
-    public Account(String idCard, Integer auserId, String politics, String nation, String majorField, Date birthday, String archivesInSchool, String rResidenceInSchool, String archivesPath, String rResidencePath, Integer qqNum, Integer phoneNum, String email) {
+    public Account(String idCard, Integer auserId, String politics, String nation, String majorField, String birthday, String archivesInSchool, String rResidenceInSchool, String archivesPath, String rResidencePath, Integer qqNum, Integer phoneNum, String email) {
         this.idCard = idCard;
-        AuserId = auserId;
+        this.AuserId = auserId;
         this.politics = politics;
         this.nation = nation;
         this.majorField = majorField;
@@ -151,5 +146,27 @@ public class Account {
         this.qqNum = qqNum;
         this.phoneNum = phoneNum;
         this.email = email;
+    }
+
+    public Account() {
+    }
+
+    @Override
+    public String toString() {
+        return "Account{" +
+                "idCard='" + idCard + '\'' +
+                ", AuserId=" + AuserId +
+                ", politics='" + politics + '\'' +
+                ", nation='" + nation + '\'' +
+                ", majorField='" + majorField + '\'' +
+                ", birthday='" + birthday + '\'' +
+                ", archivesInSchool='" + archivesInSchool + '\'' +
+                ", rResidenceInSchool='" + rResidenceInSchool + '\'' +
+                ", archivesPath='" + archivesPath + '\'' +
+                ", rResidencePath='" + rResidencePath + '\'' +
+                ", qqNum=" + qqNum +
+                ", phoneNum=" + phoneNum +
+                ", email='" + email + '\'' +
+                '}';
     }
 }
