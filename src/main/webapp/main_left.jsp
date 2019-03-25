@@ -61,10 +61,10 @@ a:hover {
 		<a href="${pageContext.request.contextPath}/selectAllUser"
 			target="mycontent">查询所有用户</a>
 	</div>
-	<div id="company_introduction">
-		<a href="${pageContext.request.contextPath}/Welcome.jsp"
-			target="mycontent">公司简介</a>
-	</div>
+	<%--<div id="company_introduction">--%>
+		<%--<a href="${pageContext.request.contextPath}/Welcome.jsp"--%>
+			<%--target="mycontent">公司简介</a>--%>
+	<%--</div>--%>
 
 	<div id="add_customer">
 		<a href="${pageContexaccountt.request.contextPath}/addcustomer.jsp"
@@ -73,6 +73,10 @@ a:hover {
     <div id="add_">
 	<a href="${pageContext.request.contextPath}/addAccount.jsp"
 	   target="mycontent">添加用户</a>
+    </div>
+    <div id="select_acoount">
+	<a href="${pageContext.request.contextPath}/account/selectAllAccount"
+	   target="mycontent">查询用户信息</a>
     </div>
 
 	<div id="select_customer">

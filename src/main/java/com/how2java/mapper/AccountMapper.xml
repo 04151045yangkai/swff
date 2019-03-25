@@ -27,7 +27,9 @@
     from account
     where idCard = #{idcard,jdbcType=VARCHAR}
   </select>
-
+  <select id="selectAllAccount" resultType="com.how2java.pojo.Account">
+    select * from account
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
     delete from account
     where idCard = #{idcard,jdbcType=VARCHAR}

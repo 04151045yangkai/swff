@@ -2,6 +2,8 @@ package com.how2java.service;
 
 import com.how2java.pojo.Account;
 
+import java.util.List;
+
 public interface AccountService {
 
     int deleteByPrimaryKey(String idcard); //删
@@ -11,6 +13,8 @@ public interface AccountService {
     int insertSelective(Account record);
 
     Account selectByPrimaryKey(String idcard);//查
+
+    List<Account> selectAllAccount();//查询所有用户信息
 
     int updateByPrimaryKeySelective(Account record);//更新
     int updateByPrimaryKey(Account record);//更新

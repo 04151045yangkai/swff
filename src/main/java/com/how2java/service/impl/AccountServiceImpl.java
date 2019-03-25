@@ -6,6 +6,8 @@ import com.how2java.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class AccountServiceImpl implements AccountService {
 
@@ -31,6 +33,11 @@ public class AccountServiceImpl implements AccountService {
     @Override
     public Account selectByPrimaryKey(String idcard) {
         return accountMapper.selectByPrimaryKey(idcard);
+    }
+
+    @Override
+    public List<Account> selectAllAccount() {
+        return accountMapper.selectAllAccount();
     }
 
     @Override

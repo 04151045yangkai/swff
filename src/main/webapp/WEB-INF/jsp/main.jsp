@@ -23,7 +23,7 @@
 	-->
 <style type="text/css">
 body {
-	background-image: url(img/1298545b7fe7645b84298c591eec566b.jpg);
+	/*background-image: url(img/1298545b7fe7645b84298c591eec566b.jpg);*/
 }
 
 div {

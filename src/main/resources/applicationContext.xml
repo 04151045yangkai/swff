@@ -24,8 +24,7 @@
 	  </property>  
 	  <property name="url">  
 	      <value>jdbc:mysql://localhost:3306/ssm?useUnicode=true&amp;characterEncoding=utf-8</value>
-	
-	  </property>  
+	  </property>
 	  <property name="username">  
 	      <value>root</value>
 	  </property>  

@@ -1,13 +1,19 @@
 package com.how2java.controller;
 
 import com.alibaba.fastjson.JSONObject;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.how2java.pojo.Account;
 import com.how2java.service.AccountService;
+import com.how2java.util.Page;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
+
+import java.util.List;
 
 @Controller
 @RequestMapping("account")
@@ -52,7 +58,7 @@ public class AccountController {
         return "fail";
     }
 
-    @RequestMapping("selectByPrimaryKey")//查询
+    @RequestMapping("selectByPrimaryKey")//查询单个用户
     @ResponseBody
     public String selectByPrimaryKey(@RequestParam("idCard") String idCard){
         Account account = accountService.selectByPrimaryKey(idCard);
@@ -61,6 +67,22 @@ public class AccountController {
 //            return "success";
 //        }
 //        return "fail";
+    }
+
+    @RequestMapping("selectAllAccount") //查询所有的用户
+    public ModelAndView selectAllAccount(Page page) {
+        ModelAndView mav = new ModelAndView();
+        PageHelper.offsetPage(page.getStart(), 5);
+        List<Account> accounts = accountService.selectAllAccount();
+        int total = (int) new PageInfo<>(accounts).getTotal();
+
+        page.caculateLast(total);
+
+        // 放入转发参数
+        mav.addObject("logins", accounts);
+        // 放入jsp路径
+        mav.setViewName("listAccounts");
+        return mav;
     }
     @RequestMapping("updateByPrimaryKey") //修改
     @ResponseBody

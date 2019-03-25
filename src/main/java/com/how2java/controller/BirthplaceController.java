@@ -24,7 +24,6 @@ public class BirthplaceController {
                          @RequestParam("isSuballowance") String isSuballowance) {
         int insert = birthplaceService.insert(new Birthplace(birthId, birthPath, cityOrTownship, address, homePhone, zipCode, isSuballowance));
         if (insert > 0) {
-
             return "success";
         }
 
