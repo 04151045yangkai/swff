@@ -9,6 +9,13 @@ public class Obtainemployment {
 
     private String oeintentsalary;
 
+    public Obtainemployment(Integer oeid, String oeintent, String oeintentcity, String oeintentsalary) {
+        this.oeid = oeid;
+        this.oeintent = oeintent;
+        this.oeintentcity = oeintentcity;
+        this.oeintentsalary = oeintentsalary;
+    }
+
     public Integer getOeid() {
         return oeid;
     }

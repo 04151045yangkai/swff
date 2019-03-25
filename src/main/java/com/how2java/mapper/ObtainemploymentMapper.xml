@@ -53,9 +53,13 @@
     <set>
       <if test="oeintent != null">oeIntent=#{oeintent},</if>
       <if test="oeintentcity != null">oeIntentCity=#{oeintentcity},</if>
-      <if test="oeintentsalary != null">oeIntentSalary=#{oeintentsalary},</if>
+      <if test="oeintentsalary != null">oeIntentSalary=#{oeintentsalary}</if>
     </set>
-    WHERE oeID = ${oeid}
+    WHERE oeId = ${oeid}
   </update>
+
+  <delete id="delete" parameterType="int">
+    DELETE FROM obtainemployment WHERE oeId = #{oeid}
+  </delete>
 
 </mapper>

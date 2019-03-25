@@ -13,12 +13,12 @@ public class ObtainemploymentServiceImpl implements ObtainemploymentService {
     ObtainemploymentMapper obtainemploymentMapper;
 
     @Override
-    public int add(Obtainemployment obtainemployment) {
+    public int insert(Obtainemployment obtainemployment) {
         return obtainemploymentMapper.insert(obtainemployment);
     }
 
     @Override
-    public int addSelective(Obtainemployment record) {
+    public int insertSelective(Obtainemployment record) {
         return obtainemploymentMapper.insertSelective(record);
     }
 
@@ -33,7 +33,7 @@ public class ObtainemploymentServiceImpl implements ObtainemploymentService {
     }
 
     @Override
-    public void deleteInfoByData(int oeid) {
-        obtainemploymentMapper.delete(oeid);
+    public int deleteInfoByData(int oeid) {
+        return obtainemploymentMapper.delete(oeid);
     }
 }

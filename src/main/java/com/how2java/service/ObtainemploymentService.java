@@ -4,9 +4,9 @@ import com.how2java.pojo.Obtainemployment;
 
 public interface ObtainemploymentService {
 
-    int add(Obtainemployment obtainemployment);
+    int insert(Obtainemployment obtainemployment);
 
-    int addSelective(Obtainemployment record);
+    int insertSelective(Obtainemployment record);
 
     //查询用户ID的就业意向信息
     Obtainemployment checkDataByID(int oeid);
@@ -15,5 +15,5 @@ public interface ObtainemploymentService {
     int UpdateFromValue(Obtainemployment obtainemployment);
 
     //删除信息
-    void deleteInfoByData(int oeid);
+    int deleteInfoByData(int oeid);
 }
