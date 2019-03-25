@@ -33,7 +33,7 @@ public class EmploymentinfoServiceImpl implements EmploymentinfoService {
     }
 
     @Override
-    public void deleteInfoByData(int eiid) {
-        employmentinfoMapper.delete(eiid);
+    public int deleteInfoByData(int eiid) {
+        return employmentinfoMapper.delete(eiid);
     }
 }

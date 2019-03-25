@@ -10,9 +10,7 @@ public interface EmploymentinfoMapper {
 
     Employmentinfo select(int eiid);
 
-    //更新用户获得证书表
     int update(Employmentinfo employmentinfo);
 
-    //删除信息
-    void delete(int costuid);
+    int delete(int eiid);
 }

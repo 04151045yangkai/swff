@@ -12,5 +12,5 @@ public interface EmploymentinfoService {
 
     int UpdateFromValue(Employmentinfo employmentinfo);
 
-    void deleteInfoByData(int eiid);
+    int deleteInfoByData(int eiid);
 }

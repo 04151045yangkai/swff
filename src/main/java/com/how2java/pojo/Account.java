@@ -134,6 +134,9 @@ public class Account {
     }
 
 
+    public Account() {
+    }
+
     public Account(String idCard, Integer auserId, String politics, String nation, String majorField, Date birthday, String archivesInSchool, String rResidenceInSchool, String archivesPath, String rResidencePath, Integer qqNum, Integer phoneNum, String email) {
         this.idCard = idCard;
         AuserId = auserId;

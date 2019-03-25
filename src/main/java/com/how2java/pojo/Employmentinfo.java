@@ -31,7 +31,32 @@ public class Employmentinfo {
 
     private String eitransferhousehold;
 
-    private byte[] eifileforwardaddress;
+    private String eifileforwardaddress;
+
+    public Employmentinfo() {
+    }
+
+    public Employmentinfo(Integer eiid, String eigraduation, String eiunitname, String eioriganizationcode,
+                          String eiunitproperties, String eiunitpindustry, String eicompanyaddress, String eijobposition,
+                          String eicontacts, Integer eicontactsphone, String eicontactemail, String eizipcode,
+                          String eifileforwardname, Integer eiffzipcode, String eitransferhousehold, String eifileforwardaddress) {
+        this.eiid = eiid;
+        this.eigraduation = eigraduation;
+        this.eiunitname = eiunitname;
+        this.eioriganizationcode = eioriganizationcode;
+        this.eiunitproperties = eiunitproperties;
+        this.eiunitpindustry = eiunitpindustry;
+        this.eicompanyaddress = eicompanyaddress;
+        this.eijobposition = eijobposition;
+        this.eicontacts = eicontacts;
+        this.eicontactsphone = eicontactsphone;
+        this.eicontactemail = eicontactemail;
+        this.eizipcode = eizipcode;
+        this.eifileforwardname = eifileforwardname;
+        this.eiffzipcode = eiffzipcode;
+        this.eitransferhousehold = eitransferhousehold;
+        this.eifileforwardaddress = eifileforwardaddress;
+    }
 
     public Integer getEiid() {
         return eiid;
@@ -153,11 +178,11 @@ public class Employmentinfo {
         this.eitransferhousehold = eitransferhousehold == null ? null : eitransferhousehold.trim();
     }
 
-    public byte[] getEifileforwardaddress() {
+    public String getEifileforwardaddress() {
         return eifileforwardaddress;
     }
 
-    public void setEifileforwardaddress(byte[] eifileforwardaddress) {
+    public void setEifileforwardaddress(String eifileforwardaddress) {
         this.eifileforwardaddress = eifileforwardaddress;
     }
 }

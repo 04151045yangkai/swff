@@ -17,9 +17,7 @@
     <result column="eiFileForwardName" jdbcType="VARCHAR" property="eifileforwardname" />
     <result column="eiFFzipCode" jdbcType="INTEGER" property="eiffzipcode" />
     <result column="eiTransferHousehold" jdbcType="VARCHAR" property="eitransferhousehold" />
-  </resultMap>
-  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.how2java.pojo.Employmentinfo">
-    <result column="eiFileForwardAddress" jdbcType="VARBINARY" property="eifileforwardaddress" />
+    <result column="eiFileForwardAddress" jdbcType="VARCHAR" property="eifileforwardaddress" />
   </resultMap>
   <sql id="Blob_Column_List">
     eiFileForwardAddress
@@ -36,7 +34,7 @@
       #{eicompanyaddress,jdbcType=VARCHAR}, #{eijobposition,jdbcType=CHAR}, #{eicontacts,jdbcType=VARCHAR}, 
       #{eicontactsphone,jdbcType=INTEGER}, #{eicontactemail,jdbcType=VARCHAR}, #{eizipcode,jdbcType=VARCHAR}, 
       #{eifileforwardname,jdbcType=VARCHAR}, #{eiffzipcode,jdbcType=INTEGER}, #{eitransferhousehold,jdbcType=VARCHAR}, 
-      #{eifileforwardaddress,jdbcType=VARBINARY})
+      #{eifileforwardaddress,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.how2java.pojo.Employmentinfo">
     insert into employmentinfo
@@ -137,7 +135,7 @@
         #{eitransferhousehold,jdbcType=VARCHAR},
       </if>
       <if test="eifileforwardaddress != null">
-        #{eifileforwardaddress,jdbcType=VARBINARY},
+        #{eifileforwardaddress,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -165,6 +163,10 @@
       <if test="eitransferhousehold != null">eiTransferHousehold=#{eitransferhousehold},</if>
       <if test="eifileforwardaddress != null">eiFileForwardAddress=#{eifileforwardaddress}</if>
     </set>
-    WHERE eiID = ${eiid}
+    WHERE eiID = #{eiid}
   </update>
+
+  <delete id="delete" parameterType="int">
+    DELETE FROM employmentinfo WHERE eiID = #{eiid}
+  </delete>
 </mapper>
