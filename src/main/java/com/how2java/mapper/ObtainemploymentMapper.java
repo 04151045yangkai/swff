@@ -18,6 +18,6 @@ public interface ObtainemploymentMapper {
     int update(Obtainemployment obtainemployment);
 
     //删除信息
-    void delete(int oeid);
+    int delete(int oeid);
 
 }
