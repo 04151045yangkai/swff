@@ -71,6 +71,9 @@ public class  Birthplace {
         this.isSuballowance = isSuballowance;
     }
 
+    public Birthplace() {
+    }
+
     public Birthplace(Integer birthId, String birthPath, String cityOrTownship, String address, Integer homePhone, Integer zipCode, String isSuballowance) {
         this.birthId = birthId;
         this.birthPath = birthPath;

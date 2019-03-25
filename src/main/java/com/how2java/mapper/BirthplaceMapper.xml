@@ -4,12 +4,13 @@
   <resultMap id="BaseResultMap" type="com.how2java.pojo.Birthplace">
     <result column="birthId" jdbcType="INTEGER" property="birthid" />
     <result column="birthPath" jdbcType="VARCHAR" property="birthpath" />
-    <result column="cityOrTownShip" jdbcType="CHAR" property="cityortownship" />
+    <result column="cityOrTownShip" jdbcType="VARCHAR" property="cityortownship" />
     <result column="address" jdbcType="VARCHAR" property="address" />
     <result column="homePhone" jdbcType="INTEGER" property="homephone" />
     <result column="zipCode" jdbcType="INTEGER" property="zipcode" />
-    <result column="isSubAllowance" jdbcType="CHAR" property="issuballowance" />
+    <result column="isSubAllowance" jdbcType="VARCHAR" property="issuballowance" />
   </resultMap>
+
   <insert id="insert" parameterType="com.how2java.pojo.Birthplace">
     insert into birthplace (birthId, birthPath, cityOrTownShip, 
       address, homePhone, zipCode, 
@@ -18,6 +19,7 @@
       #{address,jdbcType=VARCHAR}, #{homephone,jdbcType=INTEGER}, #{zipcode,jdbcType=INTEGER}, 
       #{issuballowance,jdbcType=CHAR})
   </insert>
+
   <insert id="insertSelective" parameterType="com.how2java.pojo.Birthplace">
     insert into birthplace
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -67,4 +69,28 @@
       </if>
     </trim>
   </insert>
+
+  <delete id="delete" parameterType="int">
+    DELETE FROM birthplace WHEREbirthId = #{birthid}
+  </delete>
+
+  <update id="update" parameterType="com.how2java.pojo.Birthplace" >
+    UPDATE  poorstudentcardq
+    <set>
+      <if test="birthid != null">birthId=#{birthid},</if>
+      <if test="birthpath != null">birthPath=#{birthpath},</if>
+      <if test="cityortownship != null">cityOrTownShip=#{cityortownship},</if>
+      <if test="address != null">address=#{address},</if>
+      <if test="homephone != null">homePhone=#{homephone}</if>
+      <if test="zipcode != null">zipCode=#{zipcode}</if>
+      <if test="issuballowance != null">isSubAllowance=#{issuballowance}</if>
+
+    </set>
+    WHERE birthId = #{birthid}
+  </update>
+
+  <select id="select" parameterType="int" resultType="com.how2java.pojo.Birthplace">
+    SELECT * FROM birthplace WHERE birthId = #{birthid};
+  </select>
+
 </mapper>

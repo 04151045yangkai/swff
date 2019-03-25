@@ -15,4 +15,19 @@ public class BirthplaceServiceImpl implements BirthplaceService {
     public int insert(Birthplace record) {
         return birthplaceMapper.insert(record);
     }
+
+    @Override
+    public Birthplace selectBirthplaceInfo(int birthid) {
+        return birthplaceMapper.select(birthid);
+    }
+
+    @Override
+    public int deleteBirthplaceById(int birthid) {
+        return birthplaceMapper.delete(birthid);
+    }
+
+    @Override
+    public int updateBirthplace(Birthplace birthplace) {
+        return birthplaceMapper.update(birthplace);
+    }
 }

@@ -20,5 +20,4 @@ public interface AccountMapper {
 
     int updateByPrimaryKey(Account record);//更新
 
-
 }
