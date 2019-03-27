@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Controller
 public class EmploymentinfoController {
 
@@ -18,6 +20,19 @@ public class EmploymentinfoController {
     @RequestMapping(value = "loadEmploymentInfo" ,method = RequestMethod.POST)
     public String loadDataByID( @RequestParam("eiid") Integer eiid) {
         Employmentinfo employmentinfo = eiService.checkDataByID(eiid);
+        if (employmentinfo == null) {
+            return "fail, Employmentinfo is null";
+        }
+        return  JSONObject.toJSON(employmentinfo).toString();
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "loadAllEmploymentInfo" ,method = RequestMethod.GET)
+    public String loadAllData() {
+        List<Employmentinfo> employmentinfo = eiService.checkAllData();
+        if (employmentinfo == null) {
+            return "fail, Employmentinfo is null";
+        }
         return  JSONObject.toJSON(employmentinfo).toString();
     }
 

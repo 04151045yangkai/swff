@@ -3,8 +3,11 @@ package com.how2java.service.impl;
 import com.how2java.mapper.EmploymentinfoMapper;
 import com.how2java.pojo.Employmentinfo;
 import com.how2java.service.EmploymentinfoService;
+import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class EmploymentinfoServiceImpl implements EmploymentinfoService {
@@ -25,6 +28,11 @@ public class EmploymentinfoServiceImpl implements EmploymentinfoService {
     @Override
     public Employmentinfo checkDataByID(int eiid) {
         return employmentinfoMapper.select(eiid);
+    }
+
+    @Override
+    public List<Employmentinfo> checkAllData() {
+        return employmentinfoMapper.selectAll();
     }
 
     @Override

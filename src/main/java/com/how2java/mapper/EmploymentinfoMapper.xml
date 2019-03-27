@@ -144,6 +144,10 @@
     SELECT * FROM employmentinfo WHERE eiID = #{eiid};
   </select>
 
+  <select id="selectAll" resultType="com.how2java.pojo.Employmentinfo">
+    SELECT * FROM employmentinfo ;
+  </select>
+
   <update id="update" parameterType="com.how2java.pojo.Employmentinfo" >
     UPDATE  employmentinfo
     <set>
