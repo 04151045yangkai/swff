@@ -19,7 +19,7 @@ public class Employmentinfo {
 
     private String eicontacts;
 
-    private Integer eicontactsphone;
+    private String eicontactsphone;
 
     private String eicontactemail;
 
@@ -38,7 +38,7 @@ public class Employmentinfo {
 
     public Employmentinfo(Integer eiid, String eigraduation, String eiunitname, String eioriganizationcode,
                           String eiunitproperties, String eiunitpindustry, String eicompanyaddress, String eijobposition,
-                          String eicontacts, Integer eicontactsphone, String eicontactemail, String eizipcode,
+                          String eicontacts, String eicontactsphone, String eicontactemail, String eizipcode,
                           String eifileforwardname, Integer eiffzipcode, String eitransferhousehold, String eifileforwardaddress) {
         this.eiid = eiid;
         this.eigraduation = eigraduation;
@@ -130,11 +130,11 @@ public class Employmentinfo {
         this.eicontacts = eicontacts == null ? null : eicontacts.trim();
     }
 
-    public Integer getEicontactsphone() {
+    public String getEicontactsphone() {
         return eicontactsphone;
     }
 
-    public void setEicontactsphone(Integer eicontactsphone) {
+    public void setEicontactsphone(String eicontactsphone) {
         this.eicontactsphone = eicontactsphone;
     }
 

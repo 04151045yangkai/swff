@@ -11,7 +11,7 @@
     <result column="eiCompanyAddress" jdbcType="VARCHAR" property="eicompanyaddress" />
     <result column="eiJobPosition" jdbcType="CHAR" property="eijobposition" />
     <result column="eiContacts" jdbcType="VARCHAR" property="eicontacts" />
-    <result column="eiContactsPhone" jdbcType="INTEGER" property="eicontactsphone" />
+    <result column="eiContactsPhone" jdbcType="VARCHAR" property="eicontactsphone" />
     <result column="eiContactEmail" jdbcType="VARCHAR" property="eicontactemail" />
     <result column="eiZipCode" jdbcType="VARCHAR" property="eizipcode" />
     <result column="eiFileForwardName" jdbcType="VARCHAR" property="eifileforwardname" />
@@ -32,7 +32,7 @@
     values (#{eiid,jdbcType=INTEGER}, #{eigraduation,jdbcType=VARCHAR}, #{eiunitname,jdbcType=VARCHAR}, 
       #{eioriganizationcode,jdbcType=VARCHAR}, #{eiunitproperties,jdbcType=CHAR}, #{eiunitpindustry,jdbcType=CHAR}, 
       #{eicompanyaddress,jdbcType=VARCHAR}, #{eijobposition,jdbcType=CHAR}, #{eicontacts,jdbcType=VARCHAR}, 
-      #{eicontactsphone,jdbcType=INTEGER}, #{eicontactemail,jdbcType=VARCHAR}, #{eizipcode,jdbcType=VARCHAR}, 
+      #{eicontactsphone,jdbcType=VARCHAR}, #{eicontactemail,jdbcType=VARCHAR}, #{eizipcode,jdbcType=VARCHAR},
       #{eifileforwardname,jdbcType=VARCHAR}, #{eiffzipcode,jdbcType=INTEGER}, #{eitransferhousehold,jdbcType=VARCHAR}, 
       #{eifileforwardaddress,jdbcType=VARCHAR})
   </insert>
@@ -117,7 +117,7 @@
         #{eicontacts,jdbcType=VARCHAR},
       </if>
       <if test="eicontactsphone != null">
-        #{eicontactsphone,jdbcType=INTEGER},
+        #{eicontactsphone,jdbcType=VARCHAR},
       </if>
       <if test="eicontactemail != null">
         #{eicontactemail,jdbcType=VARCHAR},
